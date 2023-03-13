@@ -1,7 +1,7 @@
 
-# Brazil
+# Canada
 
-This project is configured to download/prepare/build a complete Pelias installation for the country of Brazil.
+This project is configured to download/prepare/build a complete Pelias installation for the country of Canada.
 
 # Setup
 
@@ -31,4 +31,4 @@ pelias test run
 
 You can now make queries against your new Pelias build:
 
-http://localhost:4000/v1/search?text=Flores da Cunha
+http://localhost:4000/v1/search?text=Toronto
