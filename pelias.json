@@ -1,0 +1,251 @@
+{
+  "logger": {
+    "level": "info",
+    "timestamp": false
+  },
+  "esclient": {
+    "apiVersion": "7.5",
+    "hosts": [
+      {
+        "host": "elasticsearch"
+      }
+    ]
+  },
+  "elasticsearch": {
+    "settings": {
+      "index": {
+        "refresh_interval": "10s",
+        "number_of_replicas": "0",
+        "number_of_shards": "1"
+      }
+    }
+  },
+  "acceptance-tests": {
+    "endpoints": {
+      "docker": "http://api:4000/v1/"
+    }
+  },
+  "api": {
+    "services": {
+      "placeholder": {
+        "url": "http://placeholder:4100"
+      },
+      "pip": {
+        "url": "http://pip:4200"
+      },
+      "interpolation": {
+        "url": "http://interpolation:4300"
+      },
+      "libpostal": {
+        "url": "http://libpostal:4400"
+      }
+    }
+  },
+  "imports": {
+    "adminLookup": {
+      "enabled": true
+    },
+    "geonames": {
+      "datapath": "/data/geonames",
+      "countryCode": "CA"
+    },
+    "openstreetmap": {
+      "download": [
+        {
+          "sourceURL": "https://download.geofabrik.de/north-america/canada-latest.osm.pbf"
+        }
+      ],
+      "leveldbpath": "/tmp",
+      "datapath": "/data/openstreetmap",
+      "import": [
+        {
+          "filename": "canada-latest.osm.pbf"
+        }
+      ]
+    },
+    "openaddresses": {
+      "datapath": "/data/openaddresses",
+      "files": [
+        "ca/nl/happy-valley-goose-bay.csv", 
+        "ca/nl/city_of_saint_johns.csv", 
+        "ca/ab/city_of_turner_valley.csv", 
+        "ca/ab/city_of_black_diamond.csv", 
+        "ca/ab/city_of_chestermere.csv", 
+        "ca/ab/city_of_medicine_hat.csv",
+        "ca/ab/parkland_county.csv", 
+        "ca/ab/province.csv", 
+        "ca/ab/city_of_banff.csv", 
+        "ca/ab/st_albert.csv", 
+        "ca/ab/grande_prairie.csv", 
+        "ca/ab/city_of_cochrane.csv", 
+        "ca/ab/city_of_canmore.csv", 
+        "ca/ab/strathcona-county.csv", 
+        "ca/ab/city_of_red_deer.csv", 
+        "ca/ab/city_of_airdrie.csv", 
+        "ca/ab/calgary.csv", 
+        "ca/ab/city_of_lethbridge.csv", 
+        "ca/ab/city_of_edmonton.csv", 
+        "ca/bc/city_of_langford.csv", 
+        "ca/bc/province.csv", 
+        "ca/bc/vernon.csv", 
+        "ca/bc/port_moody.csv", 
+        "ca/bc/central-okanagan-regional-district.csv", 
+        "ca/bc/west_kelowna.csv", 
+        "ca/bc/city_of_west_kelowna.csv", 
+        "ca/bc/north_cowichan.csv", 
+        "ca/bc/city_of_saanich.csv", 
+        "ca/bc/city_of_squamish.csv", 
+        "ca/bc/city_of_penticton.csv", 
+        "ca/bc/campbell_river.csv", 
+        "ca/bc/city_of_courtenay.csv", 
+        "ca/bc/city_of_north_saanich.csv", 
+        "ca/bc/city_of_new_westminster.csv", 
+        "ca/bc/city_of_kimberley.csv", 
+        "ca/bc/city_of_cranbrook.csv", 
+        "ca/bc/nanaimo.csv", 
+        "ca/bc/columbia-shuswap.csv", 
+        "ca/bc/vancouver.csv", 
+        "ca/bc/prince_george.csv", 
+        "ca/bc/city_of_coquitlam.csv", 
+        "ca/bc/maple_ridge.csv", 
+        "ca/bc/surrey.csv", 
+        "ca/bc/city_of_kamloops.csv", 
+        "ca/bc/city_of_kelowna.csv", 
+        "ca/bc/okanagan_similkameen.csv", 
+        "ca/bc/thompson-nicola-regional-district.csv", 
+        "ca/bc/langley.csv", 
+        "ca/bc/city_of_abbotsford.csv", 
+        "ca/bc/central-kootenay-regional-district.csv", 
+        "ca/bc/city_of_burnaby.csv", 
+        "ca/bc/sunshine_coast.csv", 
+        "ca/bc/victoria.csv", 
+        "ca/bc/east_kootenay.csv", 
+        "ca/bc/capital-regional-district.csv", 
+        "ca/bc/cowichan_valley.csv", 
+        "ca/mb/province.csv", 
+        "ca/mb/city_of_steinbach.csv", 
+        "ca/mb/brandon.csv", 
+        "ca/mb/city_of_winnipeg.csv", 
+        "ca/qc/sainte_marthe_sur_le_lac.csv", 
+        "ca/qc/rouyn_noranda.csv", 
+        "ca/qc/repentigny.csv", 
+        "ca/qc/gatineau.csv", 
+        "ca/qc/quebec_city.csv", 
+        "ca/qc/laval.csv", 
+        "ca/qc/montreal.csv", 
+        "ca/qc/rimouski.csv", 
+        "ca/qc/longueuil.csv", 
+        "ca/qc/sherbrooke.csv", 
+        "ca/yt/whitehorse.csv", 
+        "ca/yt/province.csv", 
+        "ca/pe/province.csv", 
+        "ca/sk/saskatoon.csv", 
+        "ca/sk/regina.csv", 
+        "ca/sk/moosejaw.csv", 
+        "ca/nt/city_of_yellow_knife.csv", 
+        "ca/nb/city_of_st_john.csv", 
+        "ca/nb/city_of_fredericton.csv", 
+        "ca/nb/city_of_moncton.csv", 
+        "ca/nb/province.csv", 
+        "ca/on/quinte_west.csv", 
+        "ca/on/newmarket.csv", "ca/on/city_of_sault_ste_marie.csv", 
+        "ca/on/grey_dufferin.csv", 
+        "ca/on/hastings.csv", 
+        "ca/on/dufferin.csv", 
+        "ca/on/cobourg.csv", 
+        "ca/on/city_of_saint_catherines.csv", 
+        "ca/on/city_of_ajax.csv", 
+        "ca/on/huron.csv", 
+        "ca/on/amherstburg.csv", 
+        "ca/on/norfolk.csv", 
+        "ca/on/brantford.csv", 
+        "ca/on/haldimand.csv", 
+        "ca/on/middlesex_centre.csv", 
+        "ca/on/leeds_grenville.csv", 
+        "ca/on/city_of_cambridge.csv", 
+        "ca/on/city_of_windsor.csv", 
+        "ca/on/niagara_region.csv", 
+        "ca/on/city_of_niagara_falls.csv", 
+        "ca/on/elgin.csv", 
+        "ca/on/milton.csv", 
+        "ca/on/city_of_pickering.csv", 
+        "ca/on/city_of_burlington.csv", 
+        "ca/on/cornwall.csv", 
+        "ca/on/orangeville.csv", 
+        "ca/on/oxford.csv", 
+        "ca/on/waterloo.csv", 
+        "ca/on/peel-region.csv", 
+        "ca/on/city_of_hamilton.csv", 
+        "ca/on/city_of_ottawa.csv", 
+        "ca/on/grey.csv", 
+        "ca/on/city_of_vaughan.csv", 
+        "ca/on/city_of_kingston.csv", 
+        "ca/on/haliburton.csv", 
+        "ca/on/stormont_dundas_glengarry.csv", 
+        "ca/on/north_glengarry.csv", 
+        "ca/on/perth.csv", 
+        "ca/on/stratford.csv", 
+        "ca/on/chatham_kent.csv", 
+        "ca/on/prescott_russell.csv", 
+        "ca/on/renfrew.csv", 
+        "ca/on/essex.csv", 
+        "ca/on/city_of_welland.csv", 
+        "ca/on/muskoka.csv", 
+        "ca/on/lasalle.csv", 
+        "ca/on/seine_river.csv", 
+        "ca/on/rainy_river.csv", 
+        "ca/on/couchicing.csv", 
+        "ca/on/seguin.csv", 
+        "ca/on/thames_centre.csv", 
+        "ca/on/strathroy-caradoc.csv", 
+        "ca/on/southwest-middlesex.csv", 
+        "ca/on/north_middlesex.csv", 
+        "ca/on/newbury.csv", 
+        "ca/on/lucan_biddulph.csv", 
+        "ca/on/city_of_peterborough.csv", 
+        "ca/on/city_of_guelph.csv", 
+        "ca/on/york.csv", 
+        "ca/on/city_of_markham.csv", 
+        "ca/on/oshawa.csv", 
+        "ca/on/township_of_durham.csv", 
+        "ca/on/city_of_brampton.csv", 
+        "ca/on/lambton.csv", 
+        "ca/on/prince_edward.csv", 
+        "ca/on/city_of_barrie.csv", 
+        "ca/on/greater_sudbury.csv", 
+        "ca/on/city_of_kitchener.csv", 
+        "ca/on/city_of_oakville.csv", 
+        "ca/on/city_of_london.csv", 
+        "ca/on/simcoe.csv", 
+        "ca/on/parry_sound.csv", 
+        "ca/on/halton.csv", 
+        "ca/on/lennoxaddington.csv", 
+        "ca/on/bruce.csv", 
+        "ca/on/city_of_toronto.csv", 
+        "ca/on/city_of_thunder_bay.csv", 
+        "ca/on/belleville.csv", 
+        "ca/on/brant.csv", 
+        "ca/on/city_of_hanover.csv", 
+        "ca/on/northumberland.csv", 
+        "ca/on/west_parry_sound_district.csv", 
+        "ca/ns/cape_breton.csv", 
+        "ca/ns/province.csv", 
+        "ca/ns/halifax.csv"
+      ]
+    },
+    "polyline": {
+      "datapath": "/data/polylines",
+      "files": [
+        "canada_polylines.0sv"
+      ]
+    },
+    "whosonfirst": {
+      "datapath": "/data/whosonfirst",
+      "countryCode": "CA",
+      "importPostalcodes": true,
+      "importPlace": [
+        "85633041"
+      ]
+    }
+  }
+}
